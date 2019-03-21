@@ -1,3 +1,6 @@
+from Player import Player
+import Enemy
+
 ''' ~COMMANDS~
 Help - Displays possible commands
 Get <object> - Picks up object
@@ -13,6 +16,7 @@ E - Travels to the room that is East
 S - Travels to the room that is South
 W - Travels to the room that is West
 Compass - Shows available rooms you can travel to'''
-
+name = input('what is your name? ')
+protag = Player(name)
 while True:
     response = input('>')
