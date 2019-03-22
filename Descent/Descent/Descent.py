@@ -27,7 +27,5 @@ while True:
     response = input('>').lower().strip()
 
     #Available commands
-    if(response.find('health')!=-1):
-        print(protag.health)
     if(response.find('whoami')!=-1):
         print(protag.name) 
