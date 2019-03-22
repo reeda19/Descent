@@ -1,4 +1,6 @@
 class Map(object):
-    """defines which locations are connected to each other"""
+    """defines which locations are connected to each other
+    
+        ***Master Class***"""
 
 
