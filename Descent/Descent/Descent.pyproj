@@ -25,6 +25,9 @@
     <Compile Include="Enemy.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Location.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Map.py">
       <SubType>Code</SubType>
     </Compile>

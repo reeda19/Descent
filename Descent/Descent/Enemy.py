@@ -6,10 +6,10 @@ class Enemy(object):
     critChance = 0
     name = ''
     def __init__(self, health, damage, attackName, critChance, name):
-        health=self.health
-        damage = self.damage
-        attackName=self.attackName
-        critChance = self.critChance
-        name = self.name
+        self.health=health
+        self.damage=damage
+        self.attackName=attackName
+        self.critChance=critChance
+        self.name=name
     def attack():
-        return damage
+        return self.damage

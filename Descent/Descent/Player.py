@@ -7,6 +7,4 @@ class Player(object):
     location = []
     name = ''
     def __init__(self, name):
-        name = self.name
-
-
+        self.name=name
