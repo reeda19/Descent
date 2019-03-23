@@ -2,5 +2,4 @@ class Map(object):
     """defines which locations are connected to each other
     
         ***Master Class***"""
-
-
+    def __init__(self):

@@ -1,7 +1,6 @@
 class Player(object):
     """Defines player"""
-    limbs = ['leftArm', 'rightArm', 'LeftLeg', 'rightLeg', 'head']
-   # health = 100 will decide upon this later
+    limbs = ['leftArm', 'rightArm', 'leftLeg', 'rightLeg', 'head']
     inventory = []
     actions = []
     location = []

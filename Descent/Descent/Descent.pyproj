@@ -25,6 +25,9 @@
     <Compile Include="Enemy.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Item.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Location.py">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Player.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Weapon.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

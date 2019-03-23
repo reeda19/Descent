@@ -5,11 +5,10 @@ class Enemy(object):
     attackName = ''
     critChance = 0
     name = ''
-    def __init__(self, health, damage, attackName, critChance, name):
-        self.health=health
-        self.damage=damage
+    def __init__(self, health, attackName, critChance, name):
+        self.health=health #if players don't have health, should enemies? 
         self.attackName=attackName
         self.critChance=critChance
         self.name=name
     def attack():
-        return self.damage
+        return self.critChance
