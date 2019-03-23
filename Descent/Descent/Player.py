@@ -8,5 +8,5 @@ class Player(object):
     def __init__(self, name):
         self.name=name
     def getHealth(self):
-        limbs = str(self.limbs)
+        limbs = " ".join(str(x) for x in self.limbs)
         return limbs
