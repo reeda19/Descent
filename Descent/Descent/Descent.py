@@ -20,12 +20,19 @@ Compass - Shows available rooms you can travel to
 Attack - attacks an enemy
 Health - displays your current health
 '''
-name = input('what is your name? ')
-protag = Player.Player(name)
+
+while(True):
+    names = ['zach', 'alex', 'jack', 'froggy', 'olivia']
+    name = input("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\n>").lower().strip()
+    if(name in names):
+        print('hello,',name)
+        break;
+    else:
+        print('That is not an option, sorry')
+    protag = Player.Player(name)
 
 while True:
     response = input('>').lower().strip()
     #test
-    #Available commands
     if(response.find('whoami')!=-1):
         print(protag.name) 
