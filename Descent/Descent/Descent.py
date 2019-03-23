@@ -25,7 +25,7 @@ protag = Player.Player(name)
 
 while True:
     response = input('>').lower().strip()
-
+    #test
     #Available commands
     if(response.find('whoami')!=-1):
         print(protag.name) 
