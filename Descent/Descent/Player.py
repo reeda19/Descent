@@ -7,3 +7,6 @@ class Player(object):
     name = ''
     def __init__(self, name):
         self.name=name
+    def getHealth(self):
+        limbs = str(self.limbs)
+        return limbs

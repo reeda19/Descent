@@ -2,6 +2,7 @@ import Player
 import Enemy
 import Map
 import Location
+import random
 ''' ~COMMANDS~  
 Help - Displays possible commands
 Get <object> - Picks up object
@@ -32,17 +33,25 @@ print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <c
 while(True): #character selection
 
     name = input('>').lower().strip().split()
-    if name[0] in 'describe':
-        print(names[name[1]])
-    elif name[0] in names:
-        print('You have chosen',name[0])
+    try:
+        if name[0] in 'describe':
+            print(names[name[1]])
+        elif name[0] in names:
+            print('You have chosen',name[0])
+            protag = Player.Player(name[0])
+            break;
+        else:
+            print('That is not an option, sorry')
+    except IndexError: #no input
+        name = random.choice(list(names.keys()))
+        print('You have chosen',name)
+        protag = Player.Player(name)
         break;
-    else:
-        print('That is not an option, sorry')
-    protag = Player.Player(name)
 
 while True:
     response = input('>').lower().strip()
     #test
     if response.find('whoami')!=-1:
         print(protag.name) 
+    if response.find('health')!=-1:
+        print('limbs:',protag.getHealth())
