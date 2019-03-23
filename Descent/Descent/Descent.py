@@ -20,12 +20,22 @@ Compass - Shows available rooms you can travel to
 Attack - attacks an enemy
 Health - displays your current health
 '''
+names = {
+    'zach' : 'zach description', #descriptions to be made by olivia
+    'alex' : 'alex description',
+    'jack' : 'jack description',
+    'froggy' : 'froggy description',
+    'olivia' : 'olivia description'
+    }
+print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a characters description.")
 
-while(True):
-    names = ['zach', 'alex', 'jack', 'froggy', 'olivia']
-    name = input("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\n>").lower().strip()
-    if(name in names):
-        print('hello,',name)
+while(True): #character selection
+
+    name = input('>').lower().strip().split()
+    if name[0] in 'describe':
+        print(names[name[1]])
+    elif name[0] in names:
+        print('You have chosen',name[0])
         break;
     else:
         print('That is not an option, sorry')
@@ -34,5 +44,5 @@ while(True):
 while True:
     response = input('>').lower().strip()
     #test
-    if(response.find('whoami')!=-1):
+    if response.find('whoami')!=-1:
         print(protag.name) 
