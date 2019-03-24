@@ -1,15 +1,16 @@
 class Location(object):
     """describes and defines the contents of an individual location"""
     enemies = []
-    connectedLocations = [] # Should this be defined here or under Map.py?
+    connected_locations = [] # Should this be defined here or under Map.py?
     items = []
     description = ''
-    specialActions = {}
-    def __init__(self, enemies, connectedLocations, items, description, specialActions):
-        enemies=self.enemies
-        connectedLocations=self.connectedLocations
-        items=self.items
-        description = self.description
-        specialActionsactions=self.specialActions
+    special_actions = {}
+
+    def __init__(self, enemies, connected_locations, items, description, special_actions):
+        self.enemies = enemies
+        self.connected_locations = connected_locations
+        self.items = items
+        self.description = description
+        self.special_actions = special_actions
 
     
