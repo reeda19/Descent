@@ -2,7 +2,7 @@
 This is where all rites of passages are defined for the map.
 '''
 
-import RiteOfPassage
+from RiteOfPassage import RiteOfPassage
 from GameMap import *
 
 R1 = RiteOfPassage(

@@ -11,18 +11,26 @@ L1 = Location(
 	enemies = 
 	connected_locations,
 	items,
-	descriptions,
+	description,
 	special_actions
 	)
 
 '''
-import Location
+from Location import Location
 
 L1 = Location(
-	description = 'sample1'
+	enemies = [], 
+	connected_locations=[],
+	items =[],
+	description = "sample description",
+	special_actions = {}
 	)
 L2 = Location(
-	description = 'samle2',
+	enemies = [], 
+	connected_locations=[],
+	items =[],
+	description = "sample description 2",
+	special_actions = {}
 	)
 
 # location connections are still going to have to be designated down here, I guess.
