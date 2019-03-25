@@ -6,11 +6,12 @@ class Location(object):
     description = ''
     special_actions = {}
 
-    def __init__(self, enemies, connected_locations, items, description, special_actions):
-        self.enemies = enemies
-        self.connected_locations = connected_locations
-        self.items = items
-        self.description = description
-        self.special_actions = special_actions
+    def __init__(self, name, enemies, connected_locations, items, description, special_actions):
+       self.name=name
+       self.enemies = enemies
+       self.connected_locations = connected_locations
+       self.items = items
+       self.description = description
+       self.special_actions = special_actions
 
     

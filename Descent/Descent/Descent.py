@@ -49,9 +49,13 @@ while(True): #character selection
         break;
 
 while True:
-    response = input('>').lower().strip()
-    #test
-    if response.find('whoami')!=-1:
+    user_input = input('>').lower().strip()
+    keywords = user_input.split()
+    if len(keywords) == 0: #prevents index out of range error
+	    continue
+    if user_input.find('whoami')!=-1:
         print(protag.name) 
-    if response.find('health')!=-1:
+    if user_input.find('health')!=-1:
         print('limbs:',protag.getHealth())
+    if keywords[0] in 'look':
+        print(protag.location.description)

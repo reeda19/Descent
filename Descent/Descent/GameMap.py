@@ -19,6 +19,7 @@ L1 = Location(
 from Location import Location
 
 L1 = Location(
+    name = '',
 	enemies = [], 
 	connected_locations=[],
 	items =[],
@@ -26,7 +27,8 @@ L1 = Location(
 	special_actions = {}
 	)
 L2 = Location(
-	enemies = [], 
+    name = '',
+    enemies = [], 
 	connected_locations=[],
 	items =[],
 	description = "sample description 2",
