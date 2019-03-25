@@ -31,31 +31,30 @@ names = {
 print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a characters description.")
 
 def main():
-	while(True): #character selection
-
-	    name = input('>').lower().strip().split()
-	    try:
-		if name[0] in 'describe':
-		    print(names[name[1]])
-		elif name[0] in names:
-		    print('You have chosen',name[0])
-		    protag = Player.Player(name[0])
-		    break
-		else:
-		    print('That is not an option, sorry')
-	    except IndexError: #no input
-		name = random.choice(list(names.keys()))
-		print('You have chosen',name)
-		protag = Player.Player(name)
-		break
-while True:
-    user_input = input('>').lower().strip()
-    keywords = user_input.split()
-    if len(keywords) == 0: #prevents index out of range error
-	    continue
-    if user_input.find('whoami')!=-1:
-        print(protag.name) 
-    if user_input.find('health')!=-1:
-        print('limbs:',protag.getHealth())
-    if keywords[0] in 'look':
-        print(protag.location.description)
+    while(True): #character selection
+        name = input('>').lower().strip().split()
+        try:
+            if name[0] in 'describe':
+                print(names[name[1]])
+            elif name[0] in names:
+                print('You have chosen',name[0])
+                protag = Player.Player(name[0])
+                break
+            else:
+                print('That is not an option, sorry')
+        except IndexError: #no input
+            name = random.choice(list(names.keys()))
+            print('You have chosen',name)
+            protag = Player.Player(name)
+            break
+    while True:
+        user_input = input('>').lower().strip()
+        keywords = user_input.split()
+        if len(keywords) == 0: #prevents index out of range error
+            continue
+        if user_input.find('whoami')!=-1:
+            print(protag.name) 
+        if user_input.find('health')!=-1:
+            print('limbs:',protag.getHealth())
+        if keywords[0] in 'look':
+            print(protag.location.description)

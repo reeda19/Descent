@@ -6,7 +6,9 @@ class Item(abc.ABC):
     use_aliases = []
 
     def __init__(self, consumable, name):
-    	'''
+        self.consumable = consumable
+        self.name = name
+        '''
 		Explanation of Item class attrs:
 
 		consumable (boolean) True if item can be destroyed in game (somehow), False otherwise.
@@ -14,8 +16,7 @@ class Item(abc.ABC):
 		use_aliases (dict)
 
     	'''
-        self.consumable = consumable
-        self.name = name
+
 
     @abc.abstractmethod
     def useItem():
