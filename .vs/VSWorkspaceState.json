@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Descent"
+    "\\Descent",
+    "\\Descent\\Descent"
   ],
-  "SelectedNode": "\\Descent\\Descent.sln",
+  "SelectedNode": "\\Descent\\Descent\\Weapon.py",
   "PreviewInSolutionExplorer": false
 }
