@@ -3,6 +3,7 @@
 
 
 # Requirements
+  Runs on Python3
 
   Visual Studio
   https://visualstudio.microsoft.com/
