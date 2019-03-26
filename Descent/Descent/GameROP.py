@@ -6,8 +6,8 @@ from RiteOfPassage import RiteOfPassage
 from GameMap import *
 
 R1 = RiteOfPassage(
-	location_from = L1,
-	location_to = L2,
+	location_from = B1,
+	location_to = B2,
 	description = 'sample'
 	)
 

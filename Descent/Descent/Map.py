@@ -1,7 +1,6 @@
 import Player
 import GameMap
 import GameROP
-
 class Map(object):
 	"""
 	MAP object source.
@@ -20,7 +19,7 @@ class Map(object):
 	"""
 
 	def __init__(self):
-		self.protagonist = Player.Player()
+		self.protagonist = Player.Player('place_holder')
 		self.locations = GameMap.all_locations
 		self.rites_of_passage = GameROP.all_rops
 

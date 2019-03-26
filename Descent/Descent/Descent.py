@@ -21,9 +21,19 @@ Compass - Shows available rooms you can travel to
 Attack - attacks an enemy
 Health - displays your current health
 '''
+direction_string_dict = {
+'n' : 'north',	
+'e' : 'east',
+'s' : 'south',
+'w' : 'west',
+'ne' : 'northeast',
+'se' : 'southeast',
+'nw' : 'northwest',
+'sw' : 'southwest'
+}
 names = {
     'zach' : 'zach description', #descriptions to be made by olivia
-    'alex' : 'alex description',
+    'alex' : 'alex description', #Each character has a different storyline/plot
     'jack' : 'jack description',
     'froggy' : 'froggy description',
     'olivia' : 'olivia description'
@@ -42,7 +52,7 @@ def main():
                 break
             else:
                 print('That is not an option, sorry')
-        except IndexError: #no input
+        except IndexError: #if no input, name is chosen randomly
             name = random.choice(list(names.keys()))
             print('You have chosen',name)
             protag = Player.Player(name)
@@ -58,5 +68,14 @@ def main():
             print(protag.getHealth())
         if keywords[0] in 'look':
             print(protag.location.description)
+        if keywords[0] in 'nesw':
+            #move player in that direction
+            try:
+                direction = keywords[0]
+                protag.location = protag.location.connected_locations[direction]
+                print("You travel into the room that is "+ direction_string_dict[direction] + '.')
+                print(protag.location)
+            except KeyError:
+				print('You cannot go ' + direction_string_dict[direction] + '.')
 if __name__ == '__main__':
 	main()

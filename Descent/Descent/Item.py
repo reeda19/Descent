@@ -1,5 +1,5 @@
 import abc
-class Item(abc.ABC):
+class Item():
     """defines an item that can be picked up and used by the player"""
     consumable = False
     name = ''
