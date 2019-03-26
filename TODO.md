@@ -1,13 +1,15 @@
 # To Do (Short Term)
-- [x] Character selections-->devs are character options
+- [ ] Write character descriptions
+- [ ] Plan out plot
+- [ ] Finish implementing player movement
 - [ ] Define Item superclass & weapon subclass (armor subclass too?)
+- [ ] Have a working model of an enemy
 - [ ] How to keep track of player damage?
   
   -->If a limb is crippled, it cannot be used
    
   --> How else can we track damage?
 - [ ] Armor decreases damage/chance of crit
-- [ ] Finish implementing player movement
 - [ ] Having a working model of Rite of Passage
 
 
