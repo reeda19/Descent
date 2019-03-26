@@ -12,7 +12,7 @@ class Item():
 		Explanation of Item class attrs:
 
 		consumable (boolean) True if item can be destroyed in game (somehow), False otherwise.
-		name (str) player name.
+		name (str) item name.
 		use_aliases (dict)
 
     	'''

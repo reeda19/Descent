@@ -21,7 +21,8 @@ Compass - Shows available rooms you can travel to
 Attack - attacks an enemy
 Health - displays your current health
 '''
-direction_string_dict = {
+RANDOM_BOGUS_STRINGS=['Sorry, that didn\'t make sense', 'I do not understand that', 'That is not an available actions'] #If input is not an action
+direction_string_dict = { #defines which user input leads to which direction
 'n' : 'north',	
 'e' : 'east',
 's' : 'south',
@@ -65,13 +66,13 @@ def main():
         keywords = user_input.split()
         if len(keywords) == 0: #prevents index out of range error
             continue
-        if user_input.find('whoami')!=-1:
+        elif user_input.find('whoami')!=-1:
             print(protag.name) 
-        if user_input.find('health')!=-1:
+        elif user_input.find('health')!=-1:
             print(protag.getHealth())
-        if keywords[0] in 'look':
+        elif keywords[0] in 'look':
             print(protag.location.description)
-        if keywords[0] in 'nesw senw':
+        elif keywords[0] in 'nesw senw':
             #move player in that direction
             try:
                 direction = keywords[0]
@@ -80,6 +81,9 @@ def main():
                 print(protag.location.description)
             except KeyError:
             	print ('You cannot go ' + direction_string_dict[direction] + '.') #path does not exist
+        else: # bogus string
+            print(random.choice(RANDOM_BOGUS_STRINGS))
+            print('Type \'help\' for available commands')
 
 if __name__ == '__main__':
     main()

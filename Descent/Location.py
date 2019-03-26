@@ -13,8 +13,6 @@ class Location(object):
         self.description = description
         self.special_actions = special_actions
 
-	
-
 
 
     

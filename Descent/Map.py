@@ -25,4 +25,4 @@ class Map(object):
 
 	def acceptMapMod(self, mapmod):
 		for key, value in mapmod:
-			print('placeholder')
+			print('placeholder for compiling purposes') #Remove this line and finish this method
