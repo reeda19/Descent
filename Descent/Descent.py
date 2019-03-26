@@ -47,6 +47,7 @@ def main():
             print('You have chosen',name)
             protag = Player.Player(name)
             break
+            
     while True:
         user_input = input('>').lower().strip()
         keywords = user_input.split()
@@ -58,5 +59,6 @@ def main():
             print(protag.getHealth())
         if keywords[0] in 'look':
             print(protag.location.description)
+
 if __name__ == '__main__':
 	main()

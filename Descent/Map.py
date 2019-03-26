@@ -24,4 +24,8 @@ class Map(object):
 		self.locations = GameMap.all_locations
 		self.rites_of_passage = GameROP.all_rops
 
+	def acceptMapMod(self, mapmod):
+		
+		for key, value in mapmod:
+
 	
