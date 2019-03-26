@@ -74,8 +74,9 @@ def main():
                 direction = keywords[0]
                 protag.location = protag.location.connected_locations[direction]
                 print("You travel into the room that is "+ direction_string_dict[direction] + '.')
-                print(protag.location)
+                print(protag.location.description)
             except KeyError:
-				print('You cannot go ' + direction_string_dict[direction] + '.')
+                print('no')
+			   # print ('You cannot go ' + direction_string_dict[direction] + '.')
 if __name__ == '__main__':
-	main()
+    main()
