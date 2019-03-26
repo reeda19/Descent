@@ -57,6 +57,7 @@ def main():
             print('You have chosen',name)
             protag = Player.Player(name)
             break
+            
     while True:
         user_input = input('>').lower().strip()
         keywords = user_input.split()
@@ -68,6 +69,7 @@ def main():
             print(protag.getHealth())
         if keywords[0] in 'look':
             print(protag.location.description)
+<<<<<<< HEAD:Descent/Descent/Descent.py
         if keywords[0] in 'nesw':
             #move player in that direction
             try:
@@ -78,5 +80,8 @@ def main():
             except KeyError:
                 print('no')
 			   # print ('You cannot go ' + direction_string_dict[direction] + '.')
+=======
+
+>>>>>>> 9ffbb34ab834aee28efb48f3fb18a7f257ee4d2d:Descent/Descent.py
 if __name__ == '__main__':
     main()
