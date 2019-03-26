@@ -31,7 +31,7 @@ names = {
 print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a characters description.")
 
 def main():
-    while(True): #character selection
+    while True: #character selection
         name = input('>').lower().strip().split()
         try:
             if name[0] in 'describe':
@@ -58,3 +58,5 @@ def main():
             print('limbs:',protag.getHealth())
         if keywords[0] in 'look':
             print(protag.location.description)
+if __name__ == '__main__':
+	main()

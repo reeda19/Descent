@@ -19,7 +19,8 @@ class RiteOfPassage:
 	def __init__(self, location_from,
 	 location_to, 
 	 passage_function = null_function,
-	 description = ''):
+	 description = ''
+	 ):
 		self.location_from = location_from
 		self.location_to = location_to
 		self.passage_function = passage_function
