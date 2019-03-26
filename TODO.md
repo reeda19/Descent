@@ -1,7 +1,7 @@
 # To Do (Short Term)
 - [ ] Write character descriptions
 - [ ] Plan out plot
-- [ ] Finish implementing player movement
+- [x] Finish implementing player movement
 - [ ] Define Item superclass & weapon subclass (armor subclass too?)
 - [ ] Have a working model of an enemy
 - [ ] How to keep track of player damage?
@@ -10,6 +10,7 @@
    
   --> How else can we track damage?
 - [ ] Armor decreases damage/chance of crit
+- [ ] Define base player damage/chance to injure
 - [ ] Having a working model of Rite of Passage
 
 
