@@ -24,7 +24,5 @@ class Map(object):
 		self.rites_of_passage = GameROP.all_rops
 
 	def acceptMapMod(self, mapmod):
-		
 		for key, value in mapmod:
-
-	
+			print('placeholder')
