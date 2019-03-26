@@ -51,7 +51,7 @@ B3 = Location(
 	)
 	
 # location connections are still going to have to be designated down here, I guess.
-B1.connected_locations = {'se':B2, 'sw': B2}
+B1.connected_locations = {'se': B3, 'sw': B2}
 B2.connected_locations = {'ne':B1, 'e': B3} #'sw': C2 (troll den/cave enterance)
 B3.connected_locations = {'nw':B1, 'w' : B2} # 'se' :C1 (cave enterance)
 

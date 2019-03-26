@@ -57,7 +57,9 @@ def main():
             print('You have chosen',name)
             protag = Player.Player(name)
             break
-            
+    introduction = '' #backstory
+    print(introduction)
+    print(protag.location.description)
     while True:
         user_input = input('>').lower().strip()
         keywords = user_input.split()
@@ -69,15 +71,15 @@ def main():
             print(protag.getHealth())
         if keywords[0] in 'look':
             print(protag.location.description)
-        if keywords[0] in 'nesw':
+        if keywords[0] in 'nesw senw':
             #move player in that direction
             try:
                 direction = keywords[0]
                 protag.location = protag.location.connected_locations[direction]
-                print("You travel into the room that is "+ direction_string_dict[direction] + '.')
+                print("You travel using the path that is "+ direction_string_dict[direction] + '.')
                 print(protag.location.description)
             except KeyError:
-            	print ('You cannot go ' + direction_string_dict[direction] + '.')
+            	print ('You cannot go ' + direction_string_dict[direction] + '.') #path does not exist
 
 if __name__ == '__main__':
     main()
