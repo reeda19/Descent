@@ -2,7 +2,7 @@
 - [ ] Write character descriptions
 - [ ] Plan out plot
 - [x] Finish implementing player movement
-- [ ] Define Item superclass & weapon subclass (armor subclass too?)
+- [x] Define Item superclass, weapon sublclass, and armor subclass
 - [ ] Have a working model of an enemy
 - [ ] How to keep track of player damage?
   
