@@ -9,11 +9,12 @@ class Player(object):
     actions = []
     location = []
     name = ''
-
+    bloodAmount = 12.0 #measured in pints. If player is wounded, they lose blood over a period of time, then slowly start to regain it. Eating food helps regain blood quicker. 
     def __init__(self, name = default_name):
         self.dead = False
         self.name = name
         self.location = GameMap.L1
     def getHealth(self):
         limbs = " ".join(str(x) for x in self.limbs)
-        return limbs
+        health = 'Blood: '+str(self.bloodAmount)+' pints. Limbs: +',limbs
+        return health

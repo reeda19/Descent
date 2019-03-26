@@ -19,17 +19,15 @@ L1 = Location(
 from Location import Location
 
 L1 = Location(
-    name = '',
+    name = 'Summit',
 	enemies = [], 
-	connected_locations=[],
 	items =[],
-	description = "sample description",
+	description = "You are at the top of the mountain. There is a a path to the east and a path to the west",
 	special_actions = {}
 	)
 L2 = Location(
     name = '',
     enemies = [], 
-	connected_locations=[],
 	items =[],
 	description = "sample description 2",
 	special_actions = {}

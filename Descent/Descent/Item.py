@@ -19,4 +19,5 @@ class Item(abc.ABC):
 
 
     @abc.abstractmethod
-    def useItem():
+    def useItem(self): #abstract since every item will have a different use
+        print('test')

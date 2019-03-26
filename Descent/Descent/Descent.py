@@ -28,7 +28,7 @@ names = {
     'froggy' : 'froggy description',
     'olivia' : 'olivia description'
     }
-print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a characters description.")
+print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a character\'s description.")
 
 def main():
     while True: #character selection
@@ -55,7 +55,7 @@ def main():
         if user_input.find('whoami')!=-1:
             print(protag.name) 
         if user_input.find('health')!=-1:
-            print('limbs:',protag.getHealth())
+            print(protag.getHealth())
         if keywords[0] in 'look':
             print(protag.location.description)
 if __name__ == '__main__':

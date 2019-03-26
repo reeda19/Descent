@@ -10,5 +10,5 @@ class Enemy(object):
         self.attackName=attackName
         self.critChance=critChance
         self.name=name
-    def attack():
+    def attack(self):
         return self.critChance
