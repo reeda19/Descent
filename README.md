@@ -2,7 +2,7 @@
  A Fantasy style text-based game.
 
 
-# Requirements
+# Recommendations
   Runs on Python3
 
   Visual Studio

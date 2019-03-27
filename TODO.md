@@ -1,8 +1,9 @@
 # To Do (Short Term)
+- [ ] Have a reliable way to print existence of enemies/items at a location
 - [ ] Write character descriptions
 - [ ] Plan out plot
 - [x] Finish implementing player movement
-- [ ] Define Item superclass & weapon subclass (armor subclass too?)
+- [x] Define Item superclass, weapon sublclass, and armor subclass
 - [ ] Have a working model of an enemy
 - [ ] How to keep track of player damage?
   
