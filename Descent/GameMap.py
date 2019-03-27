@@ -9,7 +9,6 @@ file by adding all the names to the list at the end.
 
 B1 = Location(
 	name = '',
-	enemies = [],
 	items = [],
 	description = '',
 	special_actions = {}
@@ -27,45 +26,38 @@ S is second summit
 (add more as game goes on)
 '''
 from Location import Location
-import GameROP
 B1 = Location(
     name = 'Summit',
-	enemies = [], 
 	items =[],
 	description = "You are at the top of the mountain. There is a a path to the southeast and a path to the southwest",
 	special_actions = {}
 	)
 B2 = Location(
     name = 'Rocky Ridge',
-    enemies = [], 
 	items =[],
 	description = "You approach a rocky cliffside. Branching off, there is a path to the east, a path that continues southwest, and a path leading up northeast.",
 	special_actions = {}
 	)
 B3 = Location(
 	name = 'Crossroads',
-	enemies = [],
 	items = [],
 	description = 'There is a crossroads ahead of you, with a dingy sign. The letters are faded and unreadable. The paths go west, northwest, and southeast.',
 	special_actions = {}
 	)
 C1 = Location(
 	name = 'Cave Entrance',
-	enemies = [],
 	items = [],
 	description = 'You approach the entrance of a cave. There is a paath that continues southeast into the cave, and one that branches out east.',
 	special_actions = {}
 	)
 C2 = Location(
 	name = 'Troll Den',
-	enemies = [GameROP.troll],
 	items = [],
 	description = 'You see a troll den ahead of you. The cave of the den goes east into a cave system. The path continues southwest going past the cave, and also goes back up, northeast.',
 	special_actions = {}
 	)
 C3 = Location(
 	name = 'Cave Crossroads',
-	enemies = [],
 	items = [],
 	description = 'There is a split in the path. One way goes west, one northwest, and one southeast',
 	special_actions = {}
