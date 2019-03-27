@@ -16,6 +16,8 @@ class RiteOfPassage:
 	The passage function defines what behavior should be exhibited
 	when the rite of passage is involked.
 	'''
+	description = ''
+	Map = ''
 	def __init__(self, location_from,
 	 location_to, 
 	 passage_function = null_function,
@@ -25,7 +27,7 @@ class RiteOfPassage:
 		self.location_to = location_to
 		self.passage_function = passage_function
 
-	def __call__(self, Map):
+	def __call__(self, Map = ''):
 		return self.passage_function(self.Map)
 
 	def __str__(self):

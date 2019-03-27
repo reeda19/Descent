@@ -1,7 +1,6 @@
 '''
 This is where all rites of passages are defined for the map.
 '''
-from GameMap import *
 import GameMap
 from RiteOfPassage import RiteOfPassage
 from Enemy import Enemy
