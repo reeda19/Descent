@@ -27,7 +27,7 @@ S is second summit
 (add more as game goes on)
 '''
 from Location import Location
-
+from Enemy import troll
 B1 = Location(
     name = 'Summit',
 	enemies = [], 
@@ -49,11 +49,27 @@ B3 = Location(
 	description = 'There is a crossroads ahead of you, with a dingy sign. The letters are faded and unreadable. The paths go west, northwest, and southeast.',
 	special_actions = {}
 	)
+C1 = Location(
+	name = 'Cave Entrance',
+	enemies = [],
+	items = [],
+	description = 'You approach the entrance of a cave. There is a paath that continues southeast into the cave, and one that branches out east.',
+	special_actions = {}
+	)
+C2 = Location(
+	name = 'Troll Den',
+	enemies = [troll],
+	items = [],
+	description = 'You see a troll den ahead of you. The cave of the den goes east into a cave system. The path continues southwest going past the cave, and also goes back up, northeast.',
+	special_actions = {}
+	)
 	
 # location connections are still going to have to be designated down here, I guess.
 B1.connected_locations = {'se': B3, 'sw': B2}
-B2.connected_locations = {'ne':B1, 'e': B3} #'sw' : C2 (troll den/ second cave enterance)
-B3.connected_locations = {'nw':B1, 'w' : B2} #'se' : C1 (cave enterance)
+B2.connected_locations = {'ne':B1, 'e': B3, 'sw' : C2}
+B3.connected_locations = {'nw':B1, 'w' : B2, 'se' : C1} 
+C1.connected_locations = {'nw':B3} # 'se' : C3 # west will be implemented later
+C2.connected_locations = {'ne':B2}# 'w' : C3 sw will be implemented later
 
 # all_locations is special, because it is used to load the Map function.
-all_locations = [B1, B2, B3]
+all_locations = [B1, B2, B3, C1, C2]
