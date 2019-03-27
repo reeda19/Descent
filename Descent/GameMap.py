@@ -27,7 +27,7 @@ S is second summit
 (add more as game goes on)
 '''
 from Location import Location
-from Enemy import troll
+import GameROP
 B1 = Location(
     name = 'Summit',
 	enemies = [], 
@@ -58,9 +58,16 @@ C1 = Location(
 	)
 C2 = Location(
 	name = 'Troll Den',
-	enemies = [troll],
+	enemies = [GameROP.troll],
 	items = [],
 	description = 'You see a troll den ahead of you. The cave of the den goes east into a cave system. The path continues southwest going past the cave, and also goes back up, northeast.',
+	special_actions = {}
+	)
+C3 = Location(
+	name = 'Cave Crossroads',
+	enemies = [],
+	items = [],
+	description = 'There is a split in the path. One way goes west, one northwest, and one southeast',
 	special_actions = {}
 	)
 	
@@ -68,8 +75,8 @@ C2 = Location(
 B1.connected_locations = {'se': B3, 'sw': B2}
 B2.connected_locations = {'ne':B1, 'e': B3, 'sw' : C2}
 B3.connected_locations = {'nw':B1, 'w' : B2, 'se' : C1} 
-C1.connected_locations = {'nw':B3} # 'se' : C3 # west will be implemented later
-C2.connected_locations = {'ne':B2}# 'w' : C3 sw will be implemented later
-
+C1.connected_locations = {'nw':B3, 'se' : C3} # west will be implemented later
+C2.connected_locations = {'ne':B2, 'w' : C3} # sw will be implemented later
+C3.connected_locations = {'nw' : C1, 'w' : C2} #se will be implemented later
 # all_locations is special, because it is used to load the Map function.
 all_locations = [B1, B2, B3, C1, C2]
