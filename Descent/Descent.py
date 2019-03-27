@@ -47,7 +47,10 @@ def main():
         name = input('>').lower().strip().split()
         try:
             if name[0] in 'describe':
-                print(names[name[1]])
+                if name[1] in [x.lower() for x in list(names.keys())]:
+                     print(names[name[1]])
+                else:
+                    print("That is not an option")
             elif name[0] in [x.lower() for x in list(names.keys())]:
                 print('You have chosen',name[0])
                 protag = Player.Player(name[0])
@@ -64,7 +67,7 @@ def main():
     print(protag.location.description)
     while True:
         user_input = input('>').lower().strip()
-        keywords = user_input.split()
+        keywords = [x.strip() for x in user_input.split()]
         if len(keywords) == 0: #prevents index out of range error
             continue
         elif keywords[0] in ['help']:
