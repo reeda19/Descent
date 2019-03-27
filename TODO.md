@@ -1,4 +1,5 @@
 # To Do (Short Term)
+- [ ] Have a reliable way to print existence of enemies/items at a location
 - [ ] Write character descriptions
 - [ ] Plan out plot
 - [x] Finish implementing player movement
