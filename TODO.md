@@ -26,7 +26,7 @@
 # Combat System
 -Combat is turn based
 
--Health is measured in liters of blood left. If players is cut, they lose a certain amount of blood across a length of time depending on severity. After x amount of time, the bleeding stops, and blood starts regenerating. Regenerates faster if food is eaten
+-Health is measured in pints of blood left. If players is cut, they lose a certain amount of blood across a length of time depending on severity. After x amount of time, the bleeding stops, and blood starts regenerating. Regenerates faster if food is eaten
 
 -There is a chance for a critical hit to sever a limb. If one arm is gone, you cannot wield two handed sword, and you lose a lot more blood. Only issue is what happens if you lose one/both your legs? What consequences could that have, besides more bleeding?
 
