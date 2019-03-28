@@ -45,7 +45,7 @@ def main():
     while True: #character selection
         name = input('>').lower().strip().split()
         try:
-            if name[0] in 'describe':
+            if name[0] in ['describe']:
                 if name[1] in [x.lower() for x in list(names.keys())]:
                      print(names[name[1]])
                 else:
@@ -105,6 +105,13 @@ def main():
                 print(protag.location.description)
             except KeyError:
                         print ('You cannot go ' + direction + '.') #path does not exist
+        elif keywords[0] in ['i', 'inventory', 'items']:
+            if len(protag) == 0:
+                print('You are holding nothing.')
+            else:
+                for i in protag:
+                    print(i)
+            print(protag.inventory)
         else: # bogus string
             print(random.choice(RANDOM_BOGUS_STRINGS))
             print('Type \'help\' for available commands')

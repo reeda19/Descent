@@ -12,7 +12,7 @@ class Player(object):
     #If player is hit, these two values will change. damage_per_turn is the amount the player bleeds per turn. turns_taking_damage is how many turns the player will bleed for.
     damage_per_turn = 0.0 
     turns_taking_damage = 0
-    
+    damage = 1.0 # base player damage to enemies. This increases when weapons are equipped
     def __init__(self, name):
         self.dead = False
         self.name = name
