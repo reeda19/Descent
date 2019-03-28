@@ -78,7 +78,7 @@ def main():
             print(protag.getHealth())
         elif keywords[0] in ['look']:
             print(protag.location.description)
-        elif keywords[0] in ['nesw senw', 'north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']:
+        elif keywords[0] in 'nesw senw': #for player typing shorthand
             #move player in that direction
             try:
                 direction = keywords[0]
@@ -86,14 +86,16 @@ def main():
                 print("You travel using the path that is "+ direction_string_dict[direction] + '.')
                 print(protag.location.description)
             except KeyError:
-                try:
-                    direction = keywords[0]
-                    reverse_direction_dict = {v: k for k, v in direction_string_dict()} #used for translating northeast -> ne for GameMap
-                    new_direction = reverse_direction_dict[direction]
-                    protag.location = protag.location.connected_locations[new_direction]
-                    print("You travel using the path that is "+ directions_string_dict[direction] + '.')
-                    print(protag.location.description)
-                except KeyError:
+                        print ('You cannot go that way.') #path does not exist
+        elif keywords[0] in ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']: #for player typing full direction
+            try:
+                direction = keywords[0]
+                reverse_direction_dict = {v: k for k, v in direction_string_dict.items()} #used for translating northeast -> ne for GameMap
+                new_direction = reverse_direction_dict[direction]
+                protag.location = protag.location.connected_locations[new_direction]
+                print("You travel using the path that is "+ direction_string_dict[new_direction] + '.')
+                print(protag.location.description)
+            except KeyError:
                         print ('You cannot go ' + direction + '.') #path does not exist
         else: # bogus string
             print(random.choice(RANDOM_BOGUS_STRINGS))

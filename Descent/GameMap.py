@@ -47,7 +47,7 @@ B3 = Location(
 C1 = Location(
 	name = 'Cave Entrance',
 	items = [],
-	description = 'You approach the entrance of a cave. There is a paath that continues southeast into the cave, and one that branches out east.',
+	description = 'You approach the entrance of a cave. There is a path that continues southeast into the cave, and one that branches out east.',
 	special_actions = {}
 	)
 C2 = Location(
