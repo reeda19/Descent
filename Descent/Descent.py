@@ -41,7 +41,6 @@ names = {
     'olivia' : 'olivia description'
     }
 print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a character\'s description.")
-
 def main():
     while True: #character selection
         name = input('>').lower().strip().split()
@@ -66,6 +65,15 @@ def main():
     print(introduction)
     print(protag.location.description)
     while True:
+        
+        if protag.damage_per_turn>0 and protag.turns_taking_damage>0: #Decreases player blood amount if they are currently bleeding
+            protag.blood_amount-=protag.damage_per_turn
+            protag.turns_taking_damage-=1
+            print('You lost',protag.damage_per_turn,'pints of blood. This will continue for',protag.turns_taking_damage,'more turns.')
+            
+        elif protag.blood_amount!=10.0: #If player is not at full health and they are not bleeding, blood increase at half a pint/turn. This may be subject to increase if the player eats food
+            protag.blood_amount+=0.5
+            
         user_input = input('>').lower().strip()
         keywords = [x.strip() for x in user_input.split()]
         if len(keywords) == 0: #prevents index out of range error

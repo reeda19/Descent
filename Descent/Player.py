@@ -7,7 +7,12 @@ class Player(object):
     actions = []
     location = []
     name = ''
-    bloodAmount = 12.0 #measured in pints. If player is wounded, they lose blood over a period of time, then slowly start to regain it. Eating food helps regain blood quicker.
+    blood_amount = 10.0 #measured in pints. If player is wounded, they lose blood over a period of time, then slowly start to regain it. Eating food helps regain blood quicker.
+    
+    #If player is hit, these two values will change. damage_per_turn is the amount the player bleeds per turn. turns_taking_damage is how many turns the player will bleed for.
+    damage_per_turn = 0.0 
+    turns_taking_damage = 0
+    
     def __init__(self, name):
         self.dead = False
         self.name = name
@@ -15,7 +20,7 @@ class Player(object):
 
     def getHealth(self):
         limbs = " ".join(str(x) for x in self.limbs)
-        health = 'Blood: '+ str(self.bloodAmount) + ' pints.\nLimbs: ' + limbs
+        health = 'Blood: '+ str(self.blood_amount) + ' pints.\nLimbs: ' + limbs
         return health
 
     def __contains__(self, item):
