@@ -34,11 +34,11 @@ direction_string_dict = { #defines which user input leads to which direction
 'sw' : 'southwest'
 }
 names = {
-    'Zach' : 'zach description', #descriptions to be made by olivia
-    'Alex' : 'alex description', #Each character has a different storyline/plot
-    'Jack' : 'jack description',
-    'Froggy' : 'froggy description',
-    'Olivia' : 'olivia description'
+    'zach' : 'zach description', #descriptions to be made by olivia
+    'alex' : 'alex description', #Each character has a different storyline/plot
+    'jack' : 'jack description',
+    'froggy' : 'froggy description',
+    'olivia' : 'olivia description'
     }
 print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a character\'s description.")
 
@@ -62,7 +62,7 @@ def main():
             print('You have chosen',name)
             protag = Player.Player(name)
             break
-    introduction = '' #backstory
+    introduction = '' #back story
     print(introduction)
     print(protag.location.description)
     while True:
@@ -78,7 +78,7 @@ def main():
             print(protag.getHealth())
         elif keywords[0] in ['look']:
             print(protag.location.description)
-        elif keywords[0] in 'nesw senw':
+        elif keywords[0] in ['nesw senw', 'north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']:
             #move player in that direction
             try:
                 direction = keywords[0]
@@ -86,7 +86,15 @@ def main():
                 print("You travel using the path that is "+ direction_string_dict[direction] + '.')
                 print(protag.location.description)
             except KeyError:
-            	print ('You cannot go ' + direction_string_dict[direction] + '.') #path does not exist
+                try:
+                    direction = keywords[0]
+                    reverse_direction_dict = {v: k for k, v in direction_string_dict()} #used for translating northeast -> ne for GameMap
+                    new_direction = reverse_direction_dict[direction]
+                    protag.location = protag.location.connected_locations[new_direction]
+                    print("You travel using the path that is "+ directions_string_dict[direction] + '.')
+                    print(protag.location.description)
+                except KeyError:
+                        print ('You cannot go ' + direction + '.') #path does not exist
         else: # bogus string
             print(random.choice(RANDOM_BOGUS_STRINGS))
             print('Type \'help\' for available commands')
