@@ -110,8 +110,19 @@ def main():
                 print('You are holding nothing.')
             else:
                 for i in protag:
-                    print(i)
-            print(protag.inventory)
+                    print(i,'\n')
+        elif keywords[0] in ['get','grab']: # retreiving item from environment
+            item = keywords[1]
+            try:
+                if item in protag.location.items:
+                    protag.location.items.remove(item)
+                    protag.inventory.append(item)
+                    print ('You ' + keywords[0] + ' the ' + keywords[1] + '.')
+                else:
+                    print('That is not at this location.')
+
+            except IndexError:
+                print('You didn\'t say what you want to pick up')
         else: # bogus string
             print(random.choice(RANDOM_BOGUS_STRINGS))
             print('Type \'help\' for available commands')

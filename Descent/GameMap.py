@@ -28,8 +28,8 @@ S is second summit
 from Location import Location
 B1 = Location(
     name = 'Summit',
-	items =[],
-	description = "You are at the top of the mountain. There is a a path to the southeast and a path to the southwest",
+	items =['apple'],
+	description = "You are at the top of the mountain. There is a path to the southeast and a path to the southwest",
 	special_actions = {}
 	)
 B2 = Location(
