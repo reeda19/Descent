@@ -3,23 +3,24 @@ import Enemy
 import Map
 import Location
 import random
-HELP_STRING = """
-       ~COMMANDS~  
+#COMMANDS WITH A * STILL NEED TO BE IMPLEMENTED....These also may not be in the final game if they are not necessary
+HELP_STRING = """ 
+       ~COMMANDS~     
 Help - Displays possible commands
 Get <object> - Picks up object
-Use <object> - Uses object
+*Use <object> - Uses object
 Drop <object> - Drops object
 Inventory - Displays all items in your inventory
 Look - Provides description of the roomC you're in
-Open <Object> - Opens object and reveals its contents 
-Inspect <Object> - Inspects object and provides a description  
-Talk <Person> - initiates a conversation with a person                     
+*Open <Object> - Opens object and reveals its contents 
+*Inspect <Object> - Inspects object and provides a description  
+*Talk <Person> - initiates a conversation with a person                     
 N - Travels to the room that is North
 E - Travels to the room that is East
 S - Travels to the room that is South
 W - Travels to the room that is West
-Compass - Shows available rooms you can travel to
-Attack - attacks an enemy
+*Compass - Shows available rooms you can travel to
+*Attack - attacks an enemy
 Health - displays your current health
 """
 RANDOM_BOGUS_STRINGS=['Sorry, that didn\'t make sense', 'I do not understand that', 'That is not an available actions'] #If input is not an action
@@ -117,7 +118,7 @@ def main():
                 if item in [x.name.lower() for x in protag.location.items]: #Searches through the name attribitues for items, since they are objects
                     index = [x.name.lower() for x in protag.location.items].index(item)
                     itemName = protag.location.items[index]
-                    protag.location.items.remove(itemName) #removes item fro mlocation and adds it to inventory
+                    protag.location.items.remove(itemName) #removes item from location and adds it to inventory
                     protag.inventory.append(itemName)
                     print ('You ' + keywords[0] + ' the ' + keywords[1] + '.')
                 else:
@@ -125,6 +126,20 @@ def main():
 
             except IndexError:
                 print('You didn\'t say what you want to pick up')
+        elif keywords[0] in ['drop']: # retrieving item from environment
+            item = keywords[1]
+            try:
+                if item in [x.name.lower() for x in protag]: #Searches through the name attribitues for items, since they are objects
+                    index = [x.name.lower() for x in protag].index(item)
+                    itemName = protag.inventory[index]
+                    protag.inventory.remove(itemName) #removes item from location and adds it to inventory
+                    protag.location.items.append(itemName)
+                    print ('You ' + keywords[0] + ' the ' + keywords[1] + '.')
+                else:
+                    print('You do not have ' + item + '.')
+                
+            except IndexError:
+                print('You didn\'t say what you want to drop.')
         else: # bogus string
             print(random.choice(RANDOM_BOGUS_STRINGS))
             print('Type \'help\' for available commands')
