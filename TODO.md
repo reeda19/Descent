@@ -1,5 +1,5 @@
 # To Do (Short Term)
-- [ ] Have a reliable way to print existence of enemies/items at a location
+- [ ] Have a reliable way to print existence of enemies/items at a location, including ones the player drops
 - [ ] Write character descriptions
 - [x] Plan out plot
 - [ ] Write plot
@@ -10,7 +10,6 @@
 - [ ] Define base player damage/chance to injure
 - [ ] Having a working model of Rite of Passage
 - [ ] Give player ability to travel by typing out whole direction, as opposed to just 'w' 
-
 # To Do (Long Term)
 - [ ] Narration is in 3rd person
 - [ ] Check/save points
