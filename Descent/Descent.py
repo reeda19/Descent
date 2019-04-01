@@ -110,13 +110,15 @@ def main():
                 print('You are holding nothing.')
             else:
                 for i in protag:
-                    print(i,'\n')
+                    print(i.name,'\n') #Prints name attribute of each item in player's inventory
         elif keywords[0] in ['get','grab']: # retreiving item from environment
             item = keywords[1]
             try:
-                if item in protag.location.items:
-                    protag.location.items.remove(item)
-                    protag.inventory.append(item)
+                if item in [x.name.lower() for x in protag.location.items]: #Searches through the name attribitues for items, since they are objects
+                    index = [x.name.lower() for x in protag.location.items].index(item)
+                    itemName = protag.location.items[index]
+                    protag.location.items.remove(itemName) #removes item fro mlocation and adds it to inventory
+                    protag.inventory.append(itemName)
                     print ('You ' + keywords[0] + ' the ' + keywords[1] + '.')
                 else:
                     print('That is not at this location.')

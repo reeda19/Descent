@@ -26,9 +26,10 @@ S is second summit
 (add more as game goes on)
 '''
 from Location import Location
+from Weapon import Weapon
 B1 = Location(
     name = 'Summit',
-	items =['apple'],
+	items =[],
 	description = "You are at the top of the mountain. There is a path to the southeast and a path to the southwest",
 	special_actions = {}
 	)
@@ -50,10 +51,11 @@ C1 = Location(
 	description = 'You approach the entrance of a cave. There is a path that continues southeast into the cave, and one that branches out east.',
 	special_actions = {}
 	)
+ironSword = Weapon('Sword', 0.1, False)
 C2 = Location(
 	name = 'Troll Den',
-	items = [],
-	description = 'You see a troll den ahead of you. The cave of the den goes east into a cave system. The path continues southwest going past the cave, and also goes back up, northeast.',
+	items = [ironSword], 
+	description = 'You see a troll den ahead of you. The cave of the den goes east into a cave system. The path continues southwest going past the cave, and also goes back up, northeast. In the cave, you notice a rusty sword.',
 	special_actions = {}
 	)
 C3 = Location(
