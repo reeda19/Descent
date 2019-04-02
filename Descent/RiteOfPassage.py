@@ -14,7 +14,7 @@ class RiteOfPassage:
 	describing what, if any, change to the game state must be made.
 
 	The passage function defines what behavior should be exhibited
-	when the rite of passage is involked.
+	when the rite of passage is invoked.
 	'''
 	description = ''
 	Map = ''
