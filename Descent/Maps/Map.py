@@ -24,10 +24,12 @@ class Map(object):
 		self.rites_of_passage = GameROP.all_rops #Defines every rite of passage in a list
 
 
-	#Called by Descent.py when PLayer attempts to move i na direction. Returns true if player can move.
+	#Called by Descent.py when Player attempts to move in a direction. Returns true if player can move.
 	def move_player(self, new_location):
 		for rop in self.rites_of_passage:
 			if any(rop.trigger_rop(protag.location, new_location)):
+				#insert call to start ROP
 				return False;
 			else:
 				return True;
+		

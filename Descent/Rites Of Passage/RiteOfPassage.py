@@ -43,5 +43,3 @@ class RiteOfPassage:
 		return self.location_from == location_from and self.location_to == location_to
 	
 		
-	def call_rop(self): #called by Map.py when a player attempts to move in a direction that contains a ROP
-		#start ROP

@@ -1,5 +1,4 @@
 import Player
-import Enemy
 import Map
 import Location
 import random
@@ -68,17 +67,22 @@ def main():
     print(introduction)
     print(protag.location.description)
     
+    
+    
+    
     #Called when player attempts to move in a direction
     def move(direction):
         try:
-            if(Map.move_player(direction)): #Tests if ROP exists
+            if(Map.move_player(direction)): #Tests if ROP exists. If it does, move_player will begin the ROP
                 protag.location = protag.location.connected_locations[direction]
                 print("You travel using the path that is "+ direction_string_dict[direction] + '.')
                 print(protag.location.description)
-            else:
-                return False
         except KeyError:
             print ('You cannot go ' + direction + '.') #path does not exist
+            
+            
+            
+            
     while True:
         
         if protag.damage_per_turn>0 and protag.turns_taking_damage>0: #Decreases player blood amount if they are currently bleeding
