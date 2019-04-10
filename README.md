@@ -1,10 +1,13 @@
 # Descent
- A Fantasy style text-based game.
+ A fantasy-style text-based adventure game.
 
 
 # Recommendations
   Runs on Python3
 
+  Get python3
+  https://www.python.org/download/releases/3.0/
+  
   Visual Studio
   https://visualstudio.microsoft.com/
 

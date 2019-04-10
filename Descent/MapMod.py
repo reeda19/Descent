@@ -18,7 +18,6 @@ class MapMod:
 		self.attrs[key] = value
 
 	def __iter__(self):
-
 		for key, value in self.attrs.items():
 			yield (key, value)
 

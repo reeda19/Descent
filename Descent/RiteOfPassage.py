@@ -17,7 +17,7 @@ class RiteOfPassage:
 	when the rite of passage is invoked.
 	'''
 	description = ''
-	Map = ''
+	
 	def __init__(self, location_from,
 	 location_to, 
 	 passage_function = null_function,
@@ -32,3 +32,7 @@ class RiteOfPassage:
 
 	def __str__(self):
 		return self.description
+
+	def trigger_rop(self, location_from, location_to):
+		return self.location_from = location_from and
+		 self.location_to == location_to

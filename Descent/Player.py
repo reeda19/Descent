@@ -18,7 +18,7 @@ class Player(object):
         self.name = name
         self.location = GameMap.B1 #Starting location
 
-    def getHealth(self):
+    def get_health(self):
         limbs = " ".join(str(x) for x in self.limbs)
         health = 'Blood: '+ str(self.blood_amount) + ' pints.\nLimbs: ' + limbs
         return health
@@ -33,7 +33,17 @@ class Player(object):
     def __len__(self):
         return len(self.inventory)
 
-    def acceptModPacket(self, modpack):
+    def change_location(self, new_location):
+        '''
+        Changes player location to new_location.
+
+        '''
+        # note that Player puts no resistance to being assigned
+        # a new location -- that is the job of Map, to apply
+        # Rite of Passage restrictions.
+        self.location = new_location
+
+    def accept_mod_packet(self, modpack):
         for key, value in modpack:
             if key in 'name':
                 self.name = value

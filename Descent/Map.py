@@ -1,6 +1,7 @@
 import Player
 import GameMap
 import GameROP
+
 class Map(object):
 	"""
 	MAP object source.
@@ -23,6 +24,8 @@ class Map(object):
 		self.locations = GameMap.all_locations
 		self.rites_of_passage = GameROP.all_rops
 
-	def acceptMapMod(self, mapmod):
-		for key, value in mapmod:
-			print('placeholder for compiling purposes') #Remove this line and finish this method
+	def move_player(self, new_location):
+
+		if any(rop.trigger_rop(protagonist.location, new_location)
+			for rop in self.rites_of_passage):
+			# this location requires us to trigger this rop
