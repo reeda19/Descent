@@ -21,10 +21,11 @@ class Map(object):
 
 	def __init__(self):
 		self.protagonist = Player.Player('place_holder')
-		self.locations = GameMap.all_locations
-		self.rites_of_passage = GameROP.all_rops
+		self.locations = GameMap.all_locations #Defines every location in a list
+		self.rites_of_passage = GameROP.all_rops #Defines every rite of passage in a list
 
 	def move_player(self, new_location):
 		if any(rop.trigger_rop(protagonist.location, new_location)
 			for rop in self.rites_of_passage):
 			# this location requires us to trigger this rop
+			rop.
