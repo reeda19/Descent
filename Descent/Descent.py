@@ -42,6 +42,8 @@ names = {
     'olivia' : 'olivia description'
     }
 print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a character\'s description.")
+
+        
 def main():
     while True: #character selection
         name = input('>').lower().strip().split()
@@ -65,6 +67,18 @@ def main():
     introduction = '' #back story
     print(introduction)
     print(protag.location.description)
+    
+    #Called when player attempts to move in a direction
+    def move(direction):
+        try:
+            if(Map.move_player(direction)): #Tests if ROP exists
+                protag.location = protag.location.connected_locations[direction]
+                print("You travel using the path that is "+ direction_string_dict[direction] + '.')
+                print(protag.location.description)
+            else:
+                return False
+        except KeyError:
+            print ('You cannot go ' + direction + '.') #path does not exist
     while True:
         
         if protag.damage_per_turn>0 and protag.turns_taking_damage>0: #Decreases player blood amount if they are currently bleeding
@@ -87,25 +101,19 @@ def main():
             print(protag.getHealth())
         elif keywords[0] in ['look']:
             print(protag.location.description)
+            
         elif keywords[0] in 'nesw senw': #for player typing shorthand
             #move player in that direction
-            try:
-                direction = keywords[0]
-                protag.location = protag.location.connected_locations[direction]
-                print("You travel using the path that is "+ direction_string_dict[direction] + '.')
-                print(protag.location.description)
-            except KeyError:
-                        print ('You cannot go that way.') #path does not exist
+            direction = keywords[0]
+            move(direction)
+            
         elif keywords[0] in ['north', 'east', 'south', 'west', 'northeast', 'northwest', 'southeast', 'southwest']: #for player typing full direction
-            try:
+
                 direction = keywords[0]
                 reverse_direction_dict = {v: k for k, v in direction_string_dict.items()} #used for translating northeast -> ne for GameMap
                 new_direction = reverse_direction_dict[direction]
-                protag.location = protag.location.connected_locations[new_direction]
-                print("You travel using the path that is "+ direction_string_dict[new_direction] + '.')
-                print(protag.location.description)
-            except KeyError:
-                        print ('You cannot go ' + direction + '.') #path does not exist
+                move(new_direction)
+                
         elif keywords[0] in ['i', 'inventory', 'items']:
             if len(protag) == 0:
                 print('You are holding nothing.')

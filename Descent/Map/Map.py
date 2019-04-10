@@ -23,8 +23,11 @@ class Map(object):
 		self.locations = GameMap.all_locations #Defines every location in a list
 		self.rites_of_passage = GameROP.all_rops #Defines every rite of passage in a list
 
+
+	#Called by Descent.py when PLayer attempts to move i na direction. Returns true if player can move.
 	def move_player(self, new_location):
 		for rop in self.rites_of_passage:
 			if any(rop.trigger_rop(protag.location, new_location)):
-			# this location requires us to trigger this rop
-				rop.call_rop()
+				return False;
+			else:
+				return True;
