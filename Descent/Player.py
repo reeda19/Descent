@@ -27,8 +27,8 @@ class Player(object):
         return item in self.inventory
 
     def __iter__(self):
-	    for item in self.inventory:
-	        yield item
+        for item in self.inventory:
+            yield item
 
     def __len__(self):
         return len(self.inventory)

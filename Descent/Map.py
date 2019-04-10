@@ -25,7 +25,6 @@ class Map(object):
 		self.rites_of_passage = GameROP.all_rops
 
 	def move_player(self, new_location):
-
 		if any(rop.trigger_rop(protagonist.location, new_location)
 			for rop in self.rites_of_passage):
 			# this location requires us to trigger this rop

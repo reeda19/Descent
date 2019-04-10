@@ -34,5 +34,4 @@ class RiteOfPassage:
 		return self.description
 
 	def trigger_rop(self, location_from, location_to):
-		return self.location_from = location_from and
-		 self.location_to == location_to
+		return self.location_from == location_from and self.location_to == location_to
