@@ -1,4 +1,4 @@
-from Item import Item
+from Items.Item import *
 class Weapon(Item):
     """weapon class is subclass of item"""
     crit_chance = 0

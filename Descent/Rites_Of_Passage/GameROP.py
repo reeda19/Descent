@@ -1,9 +1,9 @@
 '''
 This is where all rites of passages are defined for the map.
 '''
-import GameMap
-from RiteOfPassage import RiteOfPassage
-from Enemy import Enemy
+from Maps import GameMap
+from .RiteOfPassage import RiteOfPassage
+from .Enemy import Enemy
 
 #Define enemies in ROP since they are considered Rites Of Passage?
 troll = Enemy(

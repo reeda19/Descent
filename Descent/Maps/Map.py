@@ -1,9 +1,7 @@
-import Player
-import GameMap
-import GameROP
-from Descent import protag
+from Maps import GameMap
+from Rites_Of_Passage import GameROP
 class Map(object):
-	"""
+    """
 	MAP object source.
 
 	Map objects store and manage all data about the current game state.
@@ -19,17 +17,13 @@ class Map(object):
 	used for save-load functionality.
 	"""
 
-	def __init__(self):
-		self.locations = GameMap.all_locations #Defines every location in a list
-		self.rites_of_passage = GameROP.all_rops #Defines every rite of passage in a list
+    def __init__(self):
+        self.locations = GameMap.all_locations #Defines every location in a list
+        self.rites_of_passage = GameROP.all_rops #Defines every rite of passage in a list
 
-
-	#Called by Descent.py when Player attempts to move in a direction. Returns true if player can move.
-	def move_player(self, new_location):
-		for rop in self.rites_of_passage:
-			if any(rop.trigger_rop(protag.location, new_location)):
-				#insert call to start ROP
-				return False;
-			else:
-				return True;
-		
+    def move_player(self, current_location, new_location):
+        for rop in self.rites_of_passage:
+                if rop.trigger_rop(current_location, new_location):
+			#insert call to start ROP
+                    return False
+        return True

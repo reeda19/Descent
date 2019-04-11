@@ -1,4 +1,4 @@
-from RiteOfPassage import RiteOfPassage
+from Rites_Of_Passage.RiteOfPassage import RiteOfPassage
 class Enemy(RiteOfPassage):
     """Generic Enemy Template
     Enemies can be considered a ROP in the fact that they block a player from using a certain pathway

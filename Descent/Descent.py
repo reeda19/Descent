@@ -1,6 +1,6 @@
-import Player
-import Map
-import Location
+from Player import Player
+from Maps.Map import *
+from Maps.Location import Location
 import random
 #COMMANDS WITH A * STILL NEED TO BE IMPLEMENTED....These also may not be in the final game if they are not necessary
 HELP_STRING = """ 
@@ -42,7 +42,7 @@ names = {
     }
 print("Choose a character: Zach, Alex, Jack, Froggy, Olivia:\nType \'describe <character>\' to see a character\'s description.")
 
-        
+map = Map()
 def main():
     while True: #character selection
         name = input('>').lower().strip().split()
@@ -54,14 +54,14 @@ def main():
                     print("That is not an option")
             elif name[0] in [x.lower() for x in list(names.keys())]:
                 print('You have chosen',name[0])
-                protag = Player.Player(name[0])
+                protag = Player(name[0])
                 break
             else:
                 print('That is not an option, sorry')
         except IndexError: #if no input, name is chosen randomly
             name = random.choice(list(names.keys()))
             print('You have chosen',name)
-            protag = Player.Player(name)
+            protag = Player(name)
             break
     introduction = '' #back story
     print(introduction)
@@ -73,7 +73,7 @@ def main():
     #Called when player attempts to move in a direction
     def move(direction):
         try:
-            if(Map.move_player(direction)): #Tests if ROP exists. If it does, move_player will begin the ROP
+            if map.move_player(protag.location, protag.location.connected_locations[direction]): #Tests if ROP exists. If it does, move_player will begin the ROP
                 protag.location = protag.location.connected_locations[direction]
                 print("You travel using the path that is "+ direction_string_dict[direction] + '.')
                 print(protag.location.description)

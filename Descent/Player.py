@@ -1,4 +1,4 @@
-import GameMap
+from Maps import GameMap
 
 class Player(object):
     """Defines player"""

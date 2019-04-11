@@ -25,8 +25,8 @@ L is lake
 S is second summit
 (add more as game goes on)
 '''
-from Location import Location
-from Weapon import Weapon
+from Maps.Location import *
+from Items.Weapon import *
 B1 = Location(
     name = 'Summit',
 	items =[],

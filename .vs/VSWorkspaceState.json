@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Descent"
+    "\\Descent",
+    "\\Descent\\Items",
+    "\\Descent\\Maps",
+    "\\Descent\\Rites_Of_Passage"
   ],
-  "SelectedNode": "\\Descent\\GameMap.py",
+  "SelectedNode": "\\Descent\\Descent.py",
   "PreviewInSolutionExplorer": false
 }
