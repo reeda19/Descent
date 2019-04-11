@@ -19,18 +19,20 @@ class RiteOfPassage:
 	The key boolean states whether a player has completed the passage_function or not.
 	Defaults to false until the passage_function is completed.
 	'''
-	description = ''
 	
 	def __init__(self, location_from,
 	 location_to, 
 	 passage_function = null_function,
 	 description = '',
+	 unlock_desc = '',
 	 key = False
 	 ):
 		self.location_from = location_from
 		self.location_to = location_to
 		self.passage_function = passage_function
-		self.key=key
+		self.key = key
+		self.description=description
+		self.unlock_desc=unlock_desc
 		
 	def __call__(self, Map = ''):
 		return self.passage_function(Map)
@@ -42,4 +44,8 @@ class RiteOfPassage:
 	def trigger_rop(self, location_from, location_to):
 		return self.location_from == location_from and self.location_to == location_to
 	
-		
+	def get_key(self):
+		return self.key
+	
+	def unlock(self):
+		return self.unlock_desc

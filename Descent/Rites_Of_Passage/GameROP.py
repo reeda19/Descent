@@ -18,7 +18,8 @@ troll = Enemy(
 R1 = RiteOfPassage(
 	location_from = GameMap.B1,
 	location_to = GameMap.B2,
-	description = 'sample' #need to define a way to get through a rite of passage
+	description = 'ROP encountered', #need to define a way to get through a rite of passage
+	unlock_desc = 'ROP unlocked'
 	)
 
 # all_rops is used to load the main Map object.
