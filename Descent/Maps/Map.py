@@ -24,6 +24,7 @@ class Map(object):
     def move_player(self, current_location, new_location):
         for rop in self.rites_of_passage:
                 if rop.trigger_rop(current_location, new_location):
-			#insert call to start ROP
-                    return False
+                	print("ROP Encountered")
+                	#insert call to ROP
+                	return False
         return True
